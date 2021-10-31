@@ -3,35 +3,39 @@ import {useState} from 'react';
 import Result from './components/Result';
 //import {Plus1Btn, Minus1Btn, Plus10Btn, Minus10Btn, Reset} from './components/CountBtn';
 import {CountButtons, Reset} from './components/CountButtons';
-//import LoginForm from './components/LoginForm';
 import LoginForm from './components/LoginFormTest';
-import EssayForm from './components/EssayForm';
+import TextForm from './components/TextForm';
 
 function App() {
+  // For Count
   //const [count, setCount] = useState(0);
   const [count, setCount] = useState(0);
 
   // For Login Form
   //const [username, setUsername] = useState("");
-  const [name, setName] = useState("");
-  const [phoneNum, setPhoneNum] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  // const [info, setInfo] = useState("");
+  // const [name, setName] = useState("");
+  // const [phoneNum, setPhoneNum] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [confirmPassword, setConfirmPassword] = useState("");
 
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   //const infoValue = {username, phoneNum, email, password};
-  // }
+  const [formInfo, setFormInfo] = useState({
+    nameInput: "", 
+    phoneNum: "",  
+    email: "",  
+    password: "",
+    confirmPassword: ""
+  });
 
   // For Essay Form
-  const [username, setUsername] = useState("");
-  const [age, setAge] = useState("");
-  const [dob, setDob] = useState("");
-  const [essayEmail, setEssayEmail] = useState("");
-  const [phoneNo, setPhoneNo] = useState("");
-  const [essay, setEssay] = useState("");
+  const [info, setInfo] = useState({
+    username: "",
+    age: "",
+    dob: "",
+    essayEmail: "",
+    phone: "",
+    essay: ""
+  });
 
   return (
     <div className="App">
@@ -45,17 +49,8 @@ function App() {
         <CountButtons count={count} setCount={setCount} value={10}/>
       </div>
       <Reset count={count} setCount={setCount}/>
-      <LoginForm name={name} setName={setName} 
-                 phoneNum={phoneNum} setPhoneNum={setPhoneNum}
-                 email={email} setEmail={setEmail}
-                 password={password} setPassword={setPassword}
-                 confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword}/>
-      <EssayForm username={username} setUsername={setUsername}
-                 age={age} setAge={setAge}
-                 dob={dob} setDob={setDob}
-                 phoneNo={phoneNo} setPhoneNo={setPhoneNo}
-                 essayEmail={essayEmail} setEssayEmail={setEssayEmail}
-                 essay={essay} setEssay={setEssay}/>
+      <LoginForm formInfo={formInfo} setFormInfo={setFormInfo}/>
+      <TextForm info={info} setInfo={setInfo}/>
     </div>
   );
 }
@@ -98,10 +93,6 @@ function App() {
 
   //const [form2, setForm2] = useState("")
 
-{/* <form id="form-1" onSubmit={handleSubmit} action="/action_page.php">
-        
-      </form> */}
-
         //   <LoginForm info={info} setInfo={setInfo} infoValue={username}/>
         // <LoginForm info={info} setInfo={setInfo} infoValue={phoneNum}/>
         // <LoginForm info={info} setInfo={setInfo} infoValue={email}/>
@@ -122,4 +113,17 @@ function App() {
   //                   phoneNum, setPhoneNum,
   //                   essay, setEssay}/>
 
+  // name={name} setName={setName} 
+  //                phoneNum={phoneNum} setPhoneNum={setPhoneNum}
+  //                email={email} setEmail={setEmail}
+  //                password={password} setPassword={setPassword}
+  //                confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword}
+
+
+  // <EssayForm username={username} setUsername={setUsername}
+  //                age={age} setAge={setAge}
+  //                dob={dob} setDob={setDob}
+  //                phoneNo={phoneNo} setPhoneNo={setPhoneNo}
+  //                essayEmail={essayEmail} setEssayEmail={setEssayEmail}
+  //                essay={essay} setEssay={setEssay}/>
 export default App;

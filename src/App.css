@@ -136,7 +136,7 @@ form button:hover {
 
 /* Form 1 Ex5 */
 #form-2 {
-  width: 30vw;
+  width: 50vw;
 }
 
 #form-2 button:hover {
@@ -148,6 +148,8 @@ form button:hover {
   cursor: pointer;
 }
 
-.dropdown-content {
-  display: none;
+#form-2 #essay {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
 }
